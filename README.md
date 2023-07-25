@@ -96,26 +96,24 @@ Abaixo estão alguns ajustes esperados no layout:
 <br />
 
 ### Filtro de pesquisa:
-O filtro de pesquisa não está 100% funcional, é preciso fazer alguns ajustes para que ele possa funcionar como esperado do componente.
+O filtro de pesquisa não está 100% funcional, é preciso fazer alguns ajustes para que ele possa funcionar como esperado do componente. Não há a necessidade de fazer a integração da API para esse caso e muito menos testes unitários, porém se o candidato desejar fazer, é um plus.
 
-O filtro de pesquisa deve contemplar os seguintes campos:
-- **1 - Preço**
-  - de `R$0` até `R$30`
-  - de `R$31` até `R$50`
-  - de `R$51` até `R$100`
-  - Mais de `R$100`
- - **2 - Disponibilidade para venda**
-   - disponível
-   - não disponível
- - **3 - Formatos disponíveis**
-   - Epub
-   - PDF
+- Os filtros de pesquisa devem popular a página de pesquisa de acordo com os filtros selecionados pelo usuário.
+- O filtro de pesquisa deve contemplar os seguintes campos:
+  - **1 - Preço**
+    - de `R$0` até `R$30`
+    - de `R$31` até `R$50`
+    - de `R$51` até `R$100`
+    - Mais de `R$100`
+   - **2 - Disponibilidade para venda**
+     - disponível
+     - não disponível
+   - **3 - Formatos disponíveis**
+     - Epub
+     - PDF
 
-<br />
-**Obs. 1: Candidatos a nível pleno devem incluir os requisitos do filtro de pesquisa contemplados na seção [nice to have](#nice-to-have) desse documento.**
-<br />
-<br />
-**Obs. 2: Testes unitários não são contemplados como requisitos para esse componente, porém se o candidato desejar fazer é um plus**
+
+**Obs.: Candidatos a nível PLENO devem incluir os requisitos do filtro de pesquisa contemplados na seção [nice to have](#nice-to-have) desse documento.**
 <br />
 
 ## Submit for review:
@@ -129,7 +127,6 @@ Para que o teste possa ser avaliado, é importante que o candidato:
 ## Nice to have
 
 #### Filtro de pesquisa:
-- Os filtros de pesquisa devem popular a página de pesquisa de acordo com os filtros selecionados pelo usuário.
 - Testes unitários aplicados ao componente filtro de pesquisa.
 - Diferenciação do comportamento do componente quando responsivo.
 
