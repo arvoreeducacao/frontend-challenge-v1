@@ -12,6 +12,8 @@ O desafio em si propõe a construção de uma feature, um campo de busca com aut
 
 Ainda como parte do desafio é preciso fazer pequenos ajustes de layout (responsividade e/ou ajustes nos comportamentos dos componentes).
 
+<br />
+
 ## Requirements
 ### Feature Busca com autocomplete aplicado:
 Nossa busca atualmente está sem um autocomplete para ajudar o usuário a encontrar o termo mais relevante a ser pesquisado, e para entregar essa melhoria de experiência se deve contemplar os seguintes critérios:
