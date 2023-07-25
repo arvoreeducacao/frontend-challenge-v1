@@ -96,7 +96,7 @@ Abaixo estão alguns ajustes esperados no layout:
 <br />
 
 ### Filtro de pesquisa:
-O filtro de pesquisa não está 100% funcional, é preciso fazer alguns ajustes para que ele possa funcionar como esperado do componente. **Não há a necessidade de fazer a integração da API para esse caso e nem testes unitários**, porém se o candidato desejar fazer, é um [nice to have](#nice-to-have)
+O filtro de pesquisa não está 100% funcional, é preciso fazer alguns ajustes para que ele possa funcionar como esperado do componente.
 
 O filtro de pesquisa deve contemplar os seguintes campos:
 - **1 - Preço**
@@ -111,6 +111,11 @@ O filtro de pesquisa deve contemplar os seguintes campos:
    - Epub
    - PDF
 
+<br />
+**Obs. 1: Candidatos a nível pleno devem incluir os requisitos do filtro de pesquisa contemplados na seção [nice to have](#nice-to-have) desse documento.**
+<br />
+<br />
+**Obs. 2: Testes unitários não são contemplados como requisitos para esse componente, porém se o candidato desejar fazer é um plus**
 <br />
 
 ## Submit for review:
