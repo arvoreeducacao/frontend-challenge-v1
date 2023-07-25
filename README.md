@@ -1,7 +1,8 @@
 
-![image](https://assets-global.website-files.com/61155c49f7b752684a9f0584/61201e989ae795462db99155_logo-arvore.svg)
 
 # Challenge Frontend
+
+![image](https://assets-global.website-files.com/61155c49f7b752684a9f0584/61201e989ae795462db99155_logo-arvore.svg)
 
 ## Description
 
@@ -110,7 +111,7 @@ Para que o teste possa ser avaliado, é importante que o candidato:
 - Mantenha o histórico de commits visíveis no repo.
 - Adicione um README para instruir o avaliador a rodar a aplicação.
 
---------------------
+##
 
 ## Nice to have
 
