@@ -106,9 +106,8 @@ O filtro de pesquisa deve contemplar os seguintes campos:
    - PDF
 
 <br />
-<br />
 
-### Submit for review:
+## Submit for review:
 Para que o teste possa ser avaliado, é importante que o candidato:
 - Suba o teste em um repositório no github.
 - Caso o repositório esteja privado, compartilhar o repo com os seguintes desenvolvedores: **@thaisquintana** e **@caiodsc**.
