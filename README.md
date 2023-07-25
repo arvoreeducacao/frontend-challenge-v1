@@ -115,6 +115,7 @@ O filtro de pesquisa não está 100% funcional, é preciso fazer alguns ajustes 
 
 **Obs.: Candidatos a nível PLENO devem incluir os requisitos do filtro de pesquisa contemplados na seção [nice to have](#nice-to-have) desse documento.**
 <br />
+<br />
 
 ## Submit for review:
 Para que o teste possa ser avaliado, é importante que o candidato:
