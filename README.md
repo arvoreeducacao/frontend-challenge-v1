@@ -13,7 +13,6 @@ O desafio em si propõe a construção de uma feature, um campo de busca com aut
 Ainda como parte do desafio é preciso fazer pequenos ajustes de layout (responsividade e/ou ajustes nos comportamentos dos componentes).
 
 ## Requirements
-
 ### Feature Busca com autocomplete aplicado:
 Nossa busca atualmente está sem um autocomplete para ajudar o usuário a encontrar o termo mais relevante a ser pesquisado, e para entregar essa melhoria de experiência se deve contemplar os seguintes critérios:
 
@@ -25,6 +24,7 @@ Nossa busca atualmente está sem um autocomplete para ajudar o usuário a encont
 - O resultado da pesquisa além do campo de busca com autocomplete deve ser populado em tela.
 - Testes unitários devem ser desenvolvidos para a nova feature.
 
+<br />
 
 ### Integração:
 
@@ -86,6 +86,7 @@ Abaixo estão alguns ajustes esperados no layout:
 
 
 **Obs.: O componente carrossel faz uso de uma lib terceira (react-slick), portanto ele não deve ser contemplado como ajuste de layout/comportamento de componente.**
+
 <br />
 
 ### Filtro de pesquisa:
@@ -103,6 +104,8 @@ O filtro de pesquisa deve contemplar os seguintes campos:
  - **3 - Formatos disponíveis**
    - Epub
    - PDF
+
+<br />
 <br />
 
 ### Submit for review:
