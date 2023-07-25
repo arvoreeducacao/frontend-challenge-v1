@@ -14,7 +14,7 @@ Ainda como parte do desafio é preciso fazer pequenos ajustes de layout (respons
 
 ## Requirements
 
-#### Feature Busca com autocomplete aplicado:
+### Feature Busca com autocomplete aplicado:
 Nossa busca atualmente está sem um autocomplete para ajudar o usuário a encontrar o termo mais relevante a ser pesquisado, e para entregar essa melhoria de experiência se deve contemplar os seguintes critérios:
 
 - Toda vez que o usuário focar no campo de texto e o seu valor mudar, deve mostrar uma lista de sugestões.
@@ -26,7 +26,7 @@ Nossa busca atualmente está sem um autocomplete para ajudar o usuário a encont
 - Testes unitários devem ser desenvolvidos para a nova feature.
 
 
-#### Integração:
+### Integração:
 
 A Home e Página de busca devem ser populada com a [API do google](https://developers.google.com/books/docs/v1/getting_started).
 
@@ -71,7 +71,7 @@ _O número máximo de resultados. O default é 10, e o valor máximo permitido �
 ```
 <br />
 
-#### Layout:
+### Layout:
 Como forma de demonstrar o comportamento esperado dos dados que populam a tela da home e página de busca, mockamos os dados no front para permitir, também, melhor entendimento de layout.
 
 Abaixo estão alguns ajustes esperados no layout:
@@ -86,9 +86,9 @@ Abaixo estão alguns ajustes esperados no layout:
 
 
 **Obs.: O componente carrossel faz uso de uma lib terceira (react-slick), portanto ele não deve ser contemplado como ajuste de layout/comportamento de componente.**
+<br />
 
-
-#### Filtro de pesquisa:
+### Filtro de pesquisa:
 O filtro de pesquisa não está 100% funcional, é preciso fazer alguns ajustes para que ele possa funcionar como esperado do componente. **Não há a necessidade de fazer a integração da API para esse caso e nem testes unitários**, porém se o candidato desejar fazer, é um [nice to have](#nice-to-have)
 
 O filtro de pesquisa deve contemplar os seguintes campos:
@@ -103,15 +103,15 @@ O filtro de pesquisa deve contemplar os seguintes campos:
  - **3 - Formatos disponíveis**
    - Epub
    - PDF
+<br />
 
-#### Submit for review:
+### Submit for review:
 Para que o teste possa ser avaliado, é importante que o candidato:
 - Suba o teste em um repositório no github.
 - Caso o repositório esteja privado, compartilhar o repo com os seguintes desenvolvedores: **@thaisquintana** e **@caiodsc**.
 - Mantenha o histórico de commits visíveis no repo.
 - Adicione um README para instruir o avaliador a rodar a aplicação.
-
-##
+<br />
 
 ## Nice to have
 
