@@ -1,14 +1,13 @@
 import React from 'react'
-import { Icon, InputSearch } from './styles'
+import { Icon, InputSearch, ContentSearch } from './styles'
 import { SearchProps } from './types'
 
-const Search: React.FC<SearchProps> = ({value}) => {
-
+const Search: React.FC<SearchProps> = props => {
     return (
-        <>
-        <InputSearch type="text" value={value} placeholder='Pesquisar...' />
-        <Icon />
-        </>
+        <ContentSearch className={props.className}>
+            <InputSearch type="text" placeholder='Pesquisar...' {...props} />
+            <Icon />
+        </ContentSearch>
     )
 }
 

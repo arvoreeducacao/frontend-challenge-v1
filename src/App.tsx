@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <Header />
-      <Shelves />
+      {/* <Shelves /> */}
       <Footer
         text={footerAllrightsReserved}
         privacyText={privacyAndPolicy}

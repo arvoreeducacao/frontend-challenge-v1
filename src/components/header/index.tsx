@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Container, Content, ContentSearch, ContentUser } from "./styles";
-import Search from "../search";
+import { Container, Content, ContentUser } from "./styles";
+import Autocomplete from "../autocomplete";
 
 const Header: React.FC = () => {
-  const [term, setTerm] = useState("");
+  const [term, setTerm] = useState("oie");
+  const [value, setValue] = useState(0);
   return (
     <Container>
       <Content>
@@ -17,9 +18,23 @@ const Header: React.FC = () => {
             />
           </a>
         </div>
-        <ContentSearch>
-          <Search value={term} />
-        </ContentSearch>
+        <h1>{value} - {term}</h1>
+        <Autocomplete 
+          searchProps={{
+            value: term,
+            onChange: (e: any,) => {
+              setTerm(e.currentTarget.value);
+            }
+          }}
+          suggestions={[{ label: 'Gus', value: 42 }]}
+          value={value}
+          onChange={
+            (e,s) => {
+              setValue(s?.value || 0);
+              if(s?.label) setTerm(s.label);
+            }
+          }
+        />
         <ContentUser>
           <p>login</p>
         </ContentUser>

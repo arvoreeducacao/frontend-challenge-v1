@@ -6,6 +6,7 @@ export const Container = styled.div`
     top: 0;
     padding: 16px;
     width: 100%;
+    box-sizing: border-box;
     
     @media (min-width: 992px) {
         left: 0;
@@ -25,20 +26,6 @@ export const Content = styled.div`
     }
     @media (min-width: 1440px) {
         max-width: 1433px;
-    }
-`
-
-export const ContentSearch = styled.div`
-    display: flex;
-    align-items: center;
-    width: 96%;
-    margin: 16px 0 8px;
-    padding-right: 14px;
-
-    @media (min-width: 992px) {
-        width: 70%;
-        margin: 0;
-        padding-right: 0;
     }
 `
 

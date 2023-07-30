@@ -10,9 +10,10 @@ export const InputSearch = styled.input`
     font-weight: 400;
     cursor: default;
     color: #406a76;
-    border-radius: 50px;
-    padding: 0 16px;
+    border-radius: 25px;
+    padding: 0 38px 0 16px;
     width: 100%;
+    box-sizing: border-box;
 
     &:placeholder {
         color: #406a76;
@@ -21,10 +22,12 @@ export const InputSearch = styled.input`
 `
 
 export const Icon = styled(SearchIcon)`
-    position: relative;
-    right: 32px;
-
-    @media (min-width: 992px) {
-        right: 42px;
-    }
+    position: absolute;
+    right: 12px;
+    top: 16px;
 `
+
+export const ContentSearch = styled.div(()=> ({
+    width: '100%',
+    margin: '16px 0 8px',
+}));

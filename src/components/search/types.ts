@@ -1,3 +1,2 @@
-export type SearchProps = {
-    value: string
-}
+import React from "react";
+export type SearchProps = React.InputHTMLAttributes<HTMLInputElement>
