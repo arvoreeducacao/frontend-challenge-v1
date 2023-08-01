@@ -7,7 +7,7 @@ const Autocomplete: React.FC<AutocompleteProps> = props => {
   
   const onFocus = useCallback(() => {
     const { searchProps: {value: term}, suggestions  } = props;
-    if(term && suggestions?.length) {
+    if(term && suggestions) {
       setShowSuggestions(true);
     }
   }, [setShowSuggestions, props.searchProps.value, props.suggestions]);
@@ -15,7 +15,7 @@ const Autocomplete: React.FC<AutocompleteProps> = props => {
   const onBlur = useCallback(() => {
     setTimeout(() => {
       setShowSuggestions(false);
-    }, 200);
+    }, 175);
   }, [setShowSuggestions]);
 
   const onInputChange = useCallback( (e:any) => {
@@ -27,11 +27,18 @@ const Autocomplete: React.FC<AutocompleteProps> = props => {
 
   return (
     <ContentAutocomplete onMouseLeave={onBlur} onMouseEnter={onFocus}>
-      <AutompleteSearch {...props.searchProps} onChange={onInputChange}/>
-      {showSuggestions && props.suggestions?.length && (
+      <AutompleteSearch {...props.searchProps} onChange={onInputChange} onBlur={onBlur} />
+      {showSuggestions && (
         <ContentSuggestions>
-          {props.suggestions.map((suggestion, index) => (
+          {props.loading && (
+            <Suggestions>...</Suggestions>
+          )}
+          {(!props.loading && !props.suggestions?.length) && (
+            <Suggestions>Nenhum resultado encontrado</Suggestions>
+          )}
+          {!props.loading && props.suggestions?.map((suggestion, index) => (
             <Suggestions key={index} onClick={event => {
+              onBlur();
               props.onChange?.(event, suggestion);
             }}>{suggestion.label}</Suggestions>
           ))}

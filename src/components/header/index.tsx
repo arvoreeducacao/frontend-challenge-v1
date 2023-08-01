@@ -62,7 +62,7 @@ const useDebounceCachedFetch = <T,>() => {
   
   const debouncedFetch = useDebounce<string>(term => {
     cachedFetch.load(term)
-  }, 1000);
+  }, 250);
 
   return { ...cachedFetch, load: debouncedFetch };
 };
@@ -70,18 +70,23 @@ const useDebounceCachedFetch = <T,>() => {
 const Header: React.FC = () => {
   const [term, setTerm] = useState("");
   const [value, setValue] = useState('');
-  const {data, load} = useDebounceCachedFetch<any>();
+  const {data, load, loading} = useDebounceCachedFetch<any>();
+  const [typing, setTyping] = useState(false);
 
   useEffect(() => {
     if(term) load(`https://www.googleapis.com/books/v1/volumes?q=${term}&startIndex=0&maxResults=10`);
+    else setValue('');
   }, [term]);
   
-  const suggestions: Suggestion<any>[] = data?.items.map(
-    (item: any) => ({
-      label: item.volumeInfo.title,
-      value: item,
-    })
-  );
+  const suggestions: Suggestion<any>[] = useMemo(() => {
+    setTyping(false);
+    return data?.items.map(
+      (item: any) => ({
+        label: item.volumeInfo.title,
+        value: item,
+      })
+    );
+  }, [data]);
 
   return (
     <Container>
@@ -101,15 +106,17 @@ const Header: React.FC = () => {
           searchProps={{
             value: term,
             onChange: (e: any,) => {
+              setTyping(true);
               setTerm(e.currentTarget.value);
             }
           }}
-          suggestions={suggestions}
+          loading={loading || typing}
+          suggestions={(term && !value) ? suggestions : undefined}
           value={value}
           onChange={
             (_, s) => {
               setValue(s?.value.volumeInfo.title || '');
-              // setTerm(s?.label || '');
+              s?.label && setTerm(s.label);
             }
           }
         />

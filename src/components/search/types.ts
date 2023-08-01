@@ -1,2 +1,2 @@
 import React from "react";
-export type SearchProps = React.InputHTMLAttributes<HTMLInputElement>
+export type SearchProps = React.InputHTMLAttributes<HTMLInputElement>;

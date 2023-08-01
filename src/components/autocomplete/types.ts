@@ -10,4 +10,5 @@ export type AutocompleteProps = {
   searchProps: SearchProps,
   onChange?: (event: any, newValue: Suggestion<any> | null) => void,
   suggestions?: Suggestion<any>[],
+  loading?: boolean,
 }
