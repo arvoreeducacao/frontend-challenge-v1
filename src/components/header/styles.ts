@@ -19,6 +19,10 @@ export const Content = styled.div`
     flex-direction: column;
     align-items: center;
 
+    a {
+        color: white !important;
+    }
+
     @media (min-width: 992px) {
         margin: 0 auto;
         flex-direction: row;
@@ -33,5 +37,14 @@ export const ContentUser = styled.div`
     display: none;
     @media (min-width: 992px) {
         display: block;
+    }
+`
+
+export const Nav = styled.nav`
+    display: flex;
+    flex-direction: column;
+
+    & > a {
+        display: inline-block;
     }
 `

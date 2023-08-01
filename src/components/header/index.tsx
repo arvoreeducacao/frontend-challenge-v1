@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { Container, Content, ContentUser } from "./styles";
+import { Container, Content, ContentUser, Nav } from "./styles";
 import Autocomplete from "../autocomplete";
 import { Suggestion } from "../autocomplete/types";
 
@@ -91,7 +91,7 @@ const Header: React.FC = () => {
   return (
     <Container>
       <Content>
-        <div>
+        <Nav>
           <a href="/">
             <img
               src="https://s3-sa-east-1.amazonaws.com/files.arvoredelivros.com.br/arvore-library-assets/images/logos/logo-livros-horizontal-white.svg"
@@ -100,8 +100,10 @@ const Header: React.FC = () => {
               height="25"
             />
           </a>
-        </div>
-        <h1>{value} - {term}</h1>
+          <div>
+            <a href="/">Home</a> | <a href="#search">Search</a>
+          </div>
+        </Nav>
         <Autocomplete
           searchProps={{
             value: term,
