@@ -1,10 +1,88 @@
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Container, Content, ContentUser } from "./styles";
 import Autocomplete from "../autocomplete";
+import { Suggestion } from "../autocomplete/types";
+
+const useDebounce = <T,>(debounceFn: (args:T) => void, delay: number) => {
+  const timer = React.useRef<number>(0);
+
+  const debaouncedLoad = (args:T) => {
+    if (timer) clearTimeout(timer.current);
+
+    timer.current = setTimeout(() => {
+      timer.current = 0;
+      debounceFn(args);
+    }, delay);
+  };
+
+  return debaouncedLoad;
+};
+
+type CachedFetch = <T>() => {
+  loading: boolean;
+  data: T | null;
+  error: any;
+  load: (url: string) => void;
+}
+
+const useCachedfetch: CachedFetch = <T,>() => {
+  const cache = useRef<{ [key: string]: T }>({});
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<Error | any>(null);
+  const [data, setData] = useState<T | null>(null);
+
+  const customFetch = useCallback((url: string) => {
+    if (!url) return;
+    (async () => {
+      setLoading(true);
+
+      if (cache.current[url]) {
+        const data = cache.current[url];
+        setData(data);
+        setLoading(false);
+      } else {
+        try {
+          const response = await fetch(url);
+          const data: T = await response.json();
+          cache.current[url] = data;
+          setData(data);
+          setLoading(false);
+        } catch (error) {
+          setError(error);
+        }
+      }
+    })();
+  }, []);
+
+  return { loading, data, error, load: customFetch };
+};
+
+const useDebounceCachedFetch = <T,>() => {
+  const cachedFetch = useCachedfetch<T>();
+  
+  const debouncedFetch = useDebounce<string>(term => {
+    cachedFetch.load(term)
+  }, 1000);
+
+  return { ...cachedFetch, load: debouncedFetch };
+};
 
 const Header: React.FC = () => {
-  const [term, setTerm] = useState("oie");
-  const [value, setValue] = useState(0);
+  const [term, setTerm] = useState("");
+  const [value, setValue] = useState('');
+  const {data, load} = useDebounceCachedFetch<any>();
+
+  useEffect(() => {
+    if(term) load(`https://www.googleapis.com/books/v1/volumes?q=${term}&startIndex=0&maxResults=10`);
+  }, [term]);
+  
+  const suggestions: Suggestion<any>[] = data?.items.map(
+    (item: any) => ({
+      label: item.volumeInfo.title,
+      value: item,
+    })
+  );
+
   return (
     <Container>
       <Content>
@@ -19,19 +97,19 @@ const Header: React.FC = () => {
           </a>
         </div>
         <h1>{value} - {term}</h1>
-        <Autocomplete 
+        <Autocomplete
           searchProps={{
             value: term,
             onChange: (e: any,) => {
               setTerm(e.currentTarget.value);
             }
           }}
-          suggestions={[{ label: 'Gus', value: 42 }]}
+          suggestions={suggestions}
           value={value}
           onChange={
-            (e,s) => {
-              setValue(s?.value || 0);
-              if(s?.label) setTerm(s.label);
+            (_, s) => {
+              setValue(s?.value.volumeInfo.title || '');
+              // setTerm(s?.label || '');
             }
           }
         />
