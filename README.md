@@ -118,7 +118,7 @@ O filtro de pesquisa não está 100% funcional, é preciso fazer alguns ajustes 
 ## Submit for review:
 Para que o teste possa ser avaliado, é importante que o candidato:
 - Suba o teste em um repositório no github.
-- Caso o repositório esteja privado, compartilhar o repo com os seguintes desenvolvedores: **@thaisquintana** e **@caiodsc**.
+- Caso o repositório esteja privado, compartilhar o repo com os seguintes desenvolvedores: **@caiodsc**, **@felipepnascimento** e **@felipehummel**
 - Mantenha o histórico de commits visíveis no repo.
 - Adicione um README para instruir o avaliador a rodar a aplicação.
 <br />
